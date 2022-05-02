@@ -2,8 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import { Box,Stack,Heading,Text,useBreakpointValue } from '@chakra-ui/react';
 
-
-
 function App() {
 
   const top = useBreakpointValue({ base: '20%', md: '30%' });
