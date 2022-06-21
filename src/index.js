@@ -1,36 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 import './index.css';
 import App from './App';
+import theme from './theme'
 import reportWebVitals from './reportWebVitals';
 
-const theme = extendTheme({
-  styles: {
-    global: (props) => ({
-      '@font-face': [
-        {
-          fontFamily: `'Quicksand-Regular'`,
-          fontStyle: 'normal',
-          fontWeight: 400,
-          fontDisplay: 'swap',
-          src: `url('/fonts/Quicksand-Regular.ttf') format('opentype')`,
-        },{
-          fontFamily: `'Quicksand-Medium'`,
-          fontStyle: 'normal',
-          fontWeight: 500,
-          fontDisplay: 'swap',
-          src: `url('/fonts/Quicksand-Medium.ttf') format('opentype')`,
-        },
-      ],
-    }),
-  },
-})
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ChakraProvider theme={theme}>
-  <App />
+    <App />
 </ChakraProvider>
 );
 

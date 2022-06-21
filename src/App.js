@@ -4,42 +4,50 @@ import { Box,Stack,Heading,Text,useBreakpointValue } from '@chakra-ui/react';
 
 function App() {
 
-  const top = useBreakpointValue({ base: '20%', md: '30%' });
-  const side = useBreakpointValue({ base: '63%', md: '65%' });
+  const top = useBreakpointValue({ base: '75%', md: '30%' });
+  const side = useBreakpointValue({ base: '15%', md: '65%' });
 
   return (
-      <Stack direction={['column', 'row']} spacing='0px'
-      height={['400px','430px','600px','800px']}>
+      <Stack direction={['column', 'row']} spacing='0px'>
         <Box 
-          position={'relative'}
+          height={['210px','400px','430px','600px','800px']}
           width={'full'}
-          backgroundImage={'images/raw-dm.jpg'}
+          position={'relative'}
+          backgroundImage={process.env.PUBLIC_URL + '/images/raw-dm.jpg'}
           backgroundColor={'#4b819c'}
           backgroundSize={'100%'}
           backgroundBlendMode={'hard-light'}
           backgroundRepeat={'no-repeat'}
           >
-            <Box
+            <Box 
               left={side}
               top={top}
               position={'relative'}
             >
-              <Heading 
-                fontFamily={'Quicksand-Regular'}
-                fontSize={{ base: 'xl', md: '3xl', lg: '4xl' }}
-                color={'#4b819c'}
+              <Box
+                width={'200px'}
               >
-                  Diana Moisejenkaite
-              </Heading>
-              <Text 
-                fontFamily={'Quicksand-Medium'}
-                fontSize={{ base: 'xs', md: 'md', lg: 'lg' }}
-                color={'#ebebeb'}
-              >
-                Violinist / Composer / Musician
-              </Text>
+                <Heading
+                  fontWeight={400}
+                  fontSize={{ base: 'xl', md: '3xl', lg: '4xl' }}
+                  
+                  color={'#4b819c'}
+                >
+                    Diana Moisejenkaite
+                </Heading>
+                <Text 
+                  fontWeight={500}
+                  fontSize={{ base: 'xs', md: 'md', lg: 'lg' }}
+                  color={'#ebebeb'}
+                >
+                  Violinist / Composer / Musician
+                </Text>
+              </Box>
             </Box>
-
+            <br/>
+            <br/>
+            <br/>
+            <br/>
         </Box>
       </Stack>
   );
